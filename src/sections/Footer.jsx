@@ -1,4 +1,5 @@
 import { mySocials } from "../constants";
+import SocialIcon from "../components/SocialIcon";
 const Footer = () => {
   return (
     <section className="flex flex-wrap items-center justify-between gap-5 pb-3 text-sm text-neutral-400 c-space">
@@ -9,9 +10,19 @@ const Footer = () => {
         <p>Privacy Policy</p>
       </div>
       <div className="flex gap-3">
-        {mySocials.map((social, index) => (
-          <a href={social.href} key={index}>
-            <img src={social.icon} className="w-5 h-5" alt={social.name} />
+        {mySocials.map((social) => (
+          <a
+            href={social.href}
+            key={social.name}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.name}
+          >
+            <SocialIcon
+              name={social.name}
+              className="h-5 w-5"
+              aria-hidden="true"
+            />
           </a>
         ))}
       </div>

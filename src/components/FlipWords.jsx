@@ -1,5 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 export const FlipWords = ({ words, duration = 3000, className }) => {
@@ -14,10 +15,10 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
-        startAnimation();
-      }, duration);
+    if (isAnimating) return;
+
+    const timeout = setTimeout(startAnimation, duration);
+    return () => clearTimeout(timeout);
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -83,4 +84,10 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
       </motion.div>
     </AnimatePresence>
   );
+};
+
+FlipWords.propTypes = {
+  words: PropTypes.arrayOf(PropTypes.string).isRequired,
+  duration: PropTypes.number,
+  className: PropTypes.string,
 };

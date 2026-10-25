@@ -24,8 +24,7 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 - 🔥 3D visuals powered by **React Three Fiber** and **Drei**
 - ⚡ Smooth transitions and scroll-based animations using **Framer Motion**
 - 🎨 Clean, responsive UI with **TailwindCSS**
-- 💌 Working contact form using **EmailJS**
-- 🧱 Beautiful UI enhancements with **Aceternity UI** and **Magic UI**
+- 💌 EmailJS contact form (requires the public configuration described below)
 - 🚀 Lightning-fast development with **Vite**
 
 ---
@@ -41,8 +40,6 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 | Drei              | Helpers and abstractions for R3F      |
 | Framer Motion     | Animation library for React           |
 | EmailJS           | Form handling and email integration   |
-| Aceternity UI     | Custom UI components                  |
-| Magic UI          | Prebuilt UI elements and design extras|
 
 ---
 
@@ -52,7 +49,6 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 ├── public/
 │   ├── assets/             # Images, textures, models
 │   ├── models/             # 3D Astronaut model
-│   └── vite.svg
 ├── src/
 │   ├── components/         # Reusable components
 │   ├── constants/          # Reusable datas
@@ -84,33 +80,43 @@ The app will be available at http://localhost:5173.
 
 ---
 
+## Contact form configuration
+
+Copy `.env.example` to `.env.local` and set the EmailJS service ID, template ID,
+and public key. Configure the EmailJS template's recipient as `{{to_email}}`;
+the form sends `from_name`, `reply_to`, `message`, and `to_email` (set to
+`adamderbali16@gmail.com`). The public key and IDs are intended for client use;
+never put an EmailJS private key or other secret in a `VITE_` variable. If the
+EmailJS values are not set, submitting the form opens the visitor's email app
+with a message addressed to `adamderbali16@gmail.com`.
+
+## Production deployment
+
+This is a single-page Vite application with no client-side router. Run
+`npm run build`; the production output is `dist/`. Vercel or Netlify can deploy
+the repository using `npm run build` and `dist` as the output directory. Set
+the three EmailJS variables in the host's production environment settings.
+There are no deep routes that require an SPA rewrite.
+
+---
+
 ## 🔗 Assets
 Assets used in the project can be found [here](https://github.com/user-attachments/files/19820923/public.zip)
 
 ---
 
 ## 📬 Contact Me
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/) 
-[![Static Badge](https://img.shields.io/badge/Youtube-%23FF0033?style=flat&logo=youtube)](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/) 
+[GitHub](https://github.com/DerbaliAdem) ·
+[LinkedIn](https://www.linkedin.com/in/adem-derbali-3519a9339/) ·
+[Facebook](https://www.facebook.com/share/14tmzNnuAJ8/) ·
+[Instagram](https://www.instagram.com/adamderbali69?cplk=MTQ0NDBvbzdncGJsZQ==)
 
 ---
 
 ## 💡 Suggestions or Feedback?
-Leave a comment on the [YouTube video](https://youtu.be/S9UQItTpwUQ) or open an issue here on GitHub.<br/>
-👉 What should I build next?
-
-- A beautiful Landing Page
-
-- A complete E-commerce site
-
-- A fun App Clone (YouTube, Netflix, etc.)
-
-Or another interactive Portfolio
-
-Let me know!
+For suggestions or feedback, reach out through one of the social profiles above.
 
 ---
 
 ## ⭐ Like This Project?
-Star the repo and [subscribe](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA??sub_confirmation=1) to the YouTube channel for more dev content!
+Thanks for visiting.
