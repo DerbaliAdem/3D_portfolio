@@ -107,13 +107,13 @@ Experiences
         transition={{ delay: 2.1, duration: 0.5 }}
       >
         <a
-          href="../../public/assets/socials/CvAdemDerbali.pdf"
-          download="Adem-Derbali-CV.pdf"
-          className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-aqua/50 hover:bg-white/10 hover:text-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-        >
-          <Download size={18} aria-hidden="true" />
-          Download CV
-        </a>
+  href="/assets/socials/CvAdemDerbali.pdf"
+  download="Adem-Derbali-CV.pdf"
+  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-aqua/50 hover:bg-white/10 hover:text-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+>
+  <Download size={18} aria-hidden="true" />
+  Download CV
+</a>
       </motion.div>
     </div>
   );
